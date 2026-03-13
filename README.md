@@ -88,10 +88,6 @@ chat-api-n8n-v1/
 │   ├── types/
 │   │   └── chat.ts                # Message, MessageRole, Rating
 │   └── ...
-├── n8n-flows/
-│   ├── chatbox-asistente-ia.json  # Workflow exportado de N8N
-│   └── company-context.md         # Contexto de empresa para el system prompt
-├── MEJORAS-CHATBOX.md             # Hoja de ruta de mejoras (22 ítems)
 └── .env.local                     # Variables de entorno (no versionado)
 ```
 
@@ -116,14 +112,14 @@ Crea un archivo `.env.local` en la raíz del proyecto:
 N8N_WEBHOOK_URL=https://tu-instancia.n8n.cloud/webhook/chatbox
 ```
 
-### 3. Importar el flujo en N8N
+### 3. Configurar el flujo en N8N
 
-1. Abre tu instancia de N8N
-2. Ve a **Workflows → Import from file**
-3. Selecciona `n8n-flows/chatbox-asistente-ia.json`
-4. Configura las credenciales de **Google Gemini (PaLM API)**
-5. Edita el `systemMessage` en el nodo **Agente IA** con el contexto de tu empresa (ver `n8n-flows/company-context.md` como referencia)
-6. Activa el workflow con el toggle **Active**
+Crea un flujo en N8N con los siguientes nodos (ver sección **N8N — Nodos del flujo**):
+
+1. Configura las credenciales de **Google Gemini (PaLM API)**
+2. Edita el campo `systemMessage` en el nodo **Agente IA** con el contexto de tu empresa
+3. Asegúrate que el webhook esté en la ruta `/chatbox` con método POST
+4. Activa el workflow con el toggle **Active**
 
 ### 4. Levantar el servidor de desarrollo
 
@@ -159,16 +155,13 @@ Abre [http://localhost:3000](http://localhost:3000)
 
 ## Personalización del asistente
 
-El contexto de la empresa se define en el campo **systemMessage** del nodo **Agente IA** en N8N.
+El contexto de la empresa se define en el campo **systemMessage** del nodo **Agente IA** en N8N. Edita directamente ese campo para adaptarlo a tu empresa. Se recomienda incluir:
 
-El archivo `n8n-flows/company-context.md` contiene un ejemplo completo con:
 - Productos y precios
 - Métodos de pago y facturación
 - Información de soporte
 - Políticas de reembolso
 - Reglas de comportamiento del bot
-
-Edita directamente ese campo en N8N para adaptarlo a tu empresa.
 
 ---
 
