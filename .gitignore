@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# MCP config (contains API keys)
+.mcp.json
+
+#others
+MEJORAS-CHATBOX.md
+/.agents
+/n8n-flows
+/n8n-flows-test
+/.claude
