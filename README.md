@@ -183,20 +183,6 @@ npm run lint     # Linter ESLint
 
 ---
 
-## Hoja de ruta
-
-Ver [`MEJORAS-CHATBOX.md`](MEJORAS-CHATBOX.md) para el listado completo de 22 mejoras planificadas organizadas por categoría:
-
-- Funcionalidades (historial, sugerencias, Markdown, retry...)
-- Seguridad (rate limiting, sanitización, headers HTTP...)
-- Formularios y captura de leads
-- UX y diseño (modo oscuro/claro, typewriter, avatar...)
-- Rendimiento (lazy loading, caché, timeouts...)
-- Accesibilidad (WCAG AA, teclado, aria-live...)
-- Analítica y monitoreo
-
----
-
 ## Licencia
 
 MIT
